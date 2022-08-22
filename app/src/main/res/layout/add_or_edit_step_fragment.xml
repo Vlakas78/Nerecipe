@@ -30,7 +30,6 @@
             android:gravity="start|top"
             android:hint="@string/edit_text_step"
             android:inputType="textMultiLine"
-            android:minHeight="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textAddEditStep" />
 
@@ -50,10 +49,10 @@
             android:layout_margin="@dimen/common_spacing"
             android:text="@string/add_picture"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/addPicture"
             app:layout_constraintEnd_toStartOf="@id/addPicture"
             app:layout_constraintTop_toBottomOf="@id/edit"
-            app:layout_constraintTop_toTopOf="@id/addPicture" />
+            app:layout_constraintTop_toTopOf="@id/addPicture"
+            app:layout_constraintBottom_toBottomOf="@id/addPicture"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar

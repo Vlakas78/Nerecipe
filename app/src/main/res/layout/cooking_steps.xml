@@ -54,7 +54,7 @@
                 android:contentDescription="@string/description_recipe_options"
                 app:icon="@drawable/ic_options_24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />-->
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -72,7 +72,10 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="@dimen/common_spacing"
                 android:textColor="?android:attr/textColorSecondary"
-                tools:text="Текст готовки ШАГ ПЕРВЫЙ" />
+                tools:text="Текст готовки ШАГ ПЕРВЫЙ
+        \n тут текст продолжается
+        \n бла бла бла
+        \n снова продолжение текста" />
 
 
         </LinearLayout>
