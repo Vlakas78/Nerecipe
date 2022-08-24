@@ -72,10 +72,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="@dimen/common_spacing"
                 android:textColor="?android:attr/textColorSecondary"
-                tools:text="Текст готовки ШАГ ПЕРВЫЙ
-        \n тут текст продолжается
-        \n бла бла бла
-        \n снова продолжение текста" />
+                tools:text="Текст готовки ШАГ ПЕРВЫЙ" />
 
 
         </LinearLayout>

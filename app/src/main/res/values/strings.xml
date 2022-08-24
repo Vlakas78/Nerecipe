@@ -25,6 +25,20 @@
     <string name="edit_text_step">Step for cooking…</string>
     <string name="text_add_edit_step">Enter a description of the step for preparing the dish:</string>
     <string name="add_picture">Add picture :</string>
+    <string name="category_european">European</string>
+    <string name="category_asian">Asian</string>
+    <string name="category_pan_asian">PanAsian</string>
+    <string name="category_eastern">Eastern</string>
+    <string name="category_american">American</string>
+    <string name="category_russian">Russian</string>
+    <string name="category_mediterranean">Mediterranean</string>
+    <string name="filter_category_European">European</string>
+    <string name="filter_category_Asian">Asian</string>
+    <string name="filter_category_Pan_Asian">Pan-Asian</string>
+    <string name="filter_category_Eastern">Eastern</string>
+    <string name="filter_category_American">American</string>
+    <string name="filter_category_Russian">Russian</string>
+    <string name="filter_category_Mediterranean">Mediterranean</string>
     <string-array name="category_names">
         <item>European</item>
         <item>Asian</item>

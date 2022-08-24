@@ -58,6 +58,10 @@ class RecipeRepositoryImpl(
         )
     }
 
+    override fun setFilter(categories: Set<Int>) {
+        TODO("Not yet implemented")
+    }
+
     override fun getFilteredList(filters: MutableSet<String>?): LiveData<List<Recipe>> {
         if (filters.isNullOrEmpty()) {
             return data

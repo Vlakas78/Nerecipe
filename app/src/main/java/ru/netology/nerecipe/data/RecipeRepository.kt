@@ -22,6 +22,8 @@ interface RecipeRepository {
 
     fun saveStep(step: Step)
 
+    fun setFilter(categories: Set<Int>)
+
     fun getFilteredList(
         filters: MutableSet<String>?
     ): LiveData<List<Recipe>>

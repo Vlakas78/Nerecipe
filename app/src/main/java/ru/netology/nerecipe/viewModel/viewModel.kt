@@ -9,8 +9,11 @@ import ru.netology.nerecipe.adapter.FilterInteractionListener
 import ru.netology.nerecipe.adapter.RecipeInteractionListener
 import ru.netology.nerecipe.adapter.StepInteractionListener
 import ru.netology.nerecipe.data.RecipeRepository
+import ru.netology.nerecipe.data.SettingsRepository
+import ru.netology.nerecipe.data.SharedPrefsSettingsRepository
 import ru.netology.nerecipe.data.impl.RecipeRepositoryImpl
 import ru.netology.nerecipe.db.AppDb
+import ru.netology.nerecipe.recipe.Categories
 import ru.netology.nerecipe.recipe.Recipe
 import ru.netology.nerecipe.recipe.Step
 import java.util.*
@@ -27,9 +30,10 @@ class RecipeViewModel(
     )
 
     val data by repository::data
-
+    private val repositorySettings: SettingsRepository = SharedPrefsSettingsRepository(application)
     private val currentRecipe = MutableLiveData<Recipe?>(null)
     private val currentStep = MutableLiveData<Step?>(null)
+    private val categoryList = mutableSetOf<Int>()
 
     val currentImageStep = MutableLiveData<String>("")
 
@@ -172,4 +176,72 @@ class RecipeViewModel(
 
     //endregion FilterInteractionListener
 
+   fun getStateSwitch(key: String): Boolean {
+        val b = repositorySettings.getStateSwitch(key)
+        setupCategories(key, b)
+        return b
+    }
+    fun getCategoriesCount(): Int {
+        return categoryList.size
+    }
+
+    fun saveStateSwitch(key: String, b: Boolean) {
+        setupCategories(key, b)
+        repositorySettings.saveStateSwitch(key, b)
+    }
+    private fun setupCategories(key: String, b: Boolean) {
+        if (key == Categories.European.key) {
+            if (b) {
+                categoryList.add(Categories.European.id)
+            } else {
+                categoryList.remove(Categories.European.id)
+            }
+        }
+        if (key == Categories.Asian.key) {
+            if (b) {
+                categoryList.add(Categories.Asian.id)
+            } else {
+                categoryList.remove(Categories.Asian.id)
+            }
+        }
+        if (key == Categories.PanAsian.key) {
+            if (b) {
+                categoryList.add(Categories.PanAsian.id)
+            } else {
+                categoryList.remove(Categories.PanAsian.id)
+            }
+        }
+        if (key == Categories.Eastern.key) {
+            if (b) {
+                categoryList.add(Categories.Eastern.id)
+            } else {
+                categoryList.remove(Categories.Eastern.id)
+            }
+        }
+        if (key == Categories.American.key) {
+            if (b) {
+                categoryList.add(Categories.American.id)
+            } else {
+                categoryList.remove(Categories.American.id)
+            }
+        }
+        if (key == Categories.Russian.key) {
+            if (b) {
+                categoryList.add(Categories.Russian.id)
+            } else {
+                categoryList.remove(Categories.Russian.id)
+            }
+        }
+        if (key == Categories.Mediterranean.key) {
+            if (b) {
+
+                categoryList.add(Categories.Mediterranean.id)
+            } else {
+
+                categoryList.remove(Categories.Mediterranean.id)
+            }
+        }
+        repository.setFilter(categoryList)
+    }
 }
+
